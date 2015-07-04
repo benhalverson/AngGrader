@@ -19,7 +19,7 @@ angular
     'ngSanitize',
     'firebase'
   ])
-  .constant('FIREBASE_URL', 'https://grader-app.firebaseio.com/assignment/')
+  .constant('FIREBASE_URL', 'https://grader-app.firebaseio.com/')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

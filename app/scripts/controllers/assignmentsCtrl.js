@@ -8,11 +8,11 @@ angular
 
     $scope.submitPost = function() {
       Assignment.create($scope.post).then(function() {
-        $scope.post = {url: 'http://', 'title': ''};
+        // $scope.post = {url: 'http://', 'title': ''};
       });
     };
 
-    $scope.deletePost = function(Assignment) {
-      Assignment.delete(Assignment);
+    $scope.deletePost = function(post) {
+      Assignment.delete(post);
     };
   });
