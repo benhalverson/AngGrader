@@ -1,6 +1,21 @@
 'use strict';
 angular
   .module('angGraderApp')
-  .factory('Assignment', function($resource) {
-    return $resource('https://grader-app.firebaseio.com/assignment/:id.json');
+  .factory('Assignment', function($firebaseArray, $firebaseObject, FIREBASE_URL) {
+    var ref = new Firebase(FIREBASE_URL);
+    var posts = $firebaseArray(ref.child('posts'));
+
+    var Post = {
+      all:posts,
+      create: function(post) {
+        return posts.$add(post);
+      },
+      get: function(postId){
+        return $firebaseObject(ref.child('posts').child(postId));
+      },
+      delete: function(post){
+        return posts.$remove(post);
+      }
+    };
+    return Post;
   });

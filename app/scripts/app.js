@@ -16,8 +16,10 @@ angular
     'ngMessages',
     'ngResource',
     'ngRoute',
-    'ngSanitize'
+    'ngSanitize',
+    'firebase'
   ])
+  .constant('FIREBASE_URL', 'https://grader-app.firebaseio.com/assignment/')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
