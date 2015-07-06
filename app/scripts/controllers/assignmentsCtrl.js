@@ -4,7 +4,7 @@ angular
   .controller('AssignmentCtrl', function($scope, Assignment) {
     $scope.posts = Assignment.all;
 
-    $scope.post = {url: 'http://', 'title': ''};
+    // $scope.post = {url: 'http://', 'title': ''};
 
     $scope.submitPost = function() {
       Assignment.create($scope.post).then(function() {
