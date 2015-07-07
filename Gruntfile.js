@@ -400,7 +400,9 @@ module.exports = function (grunt) {
       }
     }
   });
-
+grunt.loadNpmTasks('grunt-angular-templates');
+grunt.registerTask('heroku:development', 'clean');
+grunt.registerTask('heroku:production', 'clean, build');
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
