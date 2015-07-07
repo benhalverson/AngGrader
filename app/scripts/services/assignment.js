@@ -5,6 +5,7 @@ angular
     var ref = new Firebase(FIREBASE_URL);
     var posts = $firebaseArray(ref.child('posts'));
 
+
     var Post = {
       all:posts,
       create: function(post) {
@@ -13,8 +14,17 @@ angular
       get: function(postId) {
         return $firebaseObject(ref.child('posts').child(postId));
       },
-      delete: function(posts) {
-        return posts.$remove(posts);
+      delete: function(postId) {
+        console.log("services log", postId);
+        return posts.$remove(postId).then(function(ref){
+          console.log(ref);
+          }, function(err){
+            console.log(err);
+            });
+      //   return ref.child('posts').child(postId).$remove().then(function(ref) {
+      //       }, function(error) {
+      //         console.log("Error:", error);
+      //       });
       }
     };
     return Post;

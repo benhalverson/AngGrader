@@ -3,7 +3,6 @@ angular
   .module('angGraderApp')
   .controller('AssignmentCtrl', function($scope, Assignment) {
     $scope.posts = Assignment.all;
-
     // $scope.post = {url: 'http://', 'title': ''};
 
     $scope.submitPost = function() {
@@ -12,7 +11,8 @@ angular
       });
     };
 
-    $scope.deletePost = function(post) {
-      Assignment.delete(post);
+    $scope.deletePost = function(postId) {
+      console.log("delete me");
+      Assignment.delete(postId);
     };
   });
