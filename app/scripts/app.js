@@ -30,7 +30,12 @@ angular
       .when('/register', {
         templateUrl: 'views/register.html',
         controller: 'AuthCtrl',
-        controllerAs: 'register'
+        controllerAs: 'register',
+        resolve: {
+          user: function(Auth) {
+            return Auth.resolveUser();
+          }
+        }
       })
       .otherwise({
         redirectTo: '/'
