@@ -34,7 +34,7 @@
 <p>Style Score:  <input type="number" ng-model="post.style" min=1 max=50 maxlength="2"/></p>
 <p>UI/UX Score:  <input type="number" ng-model="post.uiux" min=1 max=50 maxlength="2"/></p>
 <p>Deployment Score:  <input type="number" ng-model="post.deployment" min=1 max=50 maxlength="2"/></p>
-<p>Total Score:  <input type="number" ng-model="post.total = post.functionality + post.readability + post.style + post.uiux + post.deployment" min=1 max=300 maxlength="2"/></p>
+<p>Total Score:  {{post.total}} </p>
 
   <input type="submit" value="Add Post" />
 </form>
