@@ -19,8 +19,8 @@ angular
     'ngSanitize',
     'firebase'
   ])
-  .constant('FIREBASE_URL', 'https://grader-app2.firebaseio.com')
-  .config(function ($routeProvider) {
+  .constant('FIREBASE_URL', 'https://grader-app.firebaseio.com')
+  .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/assignments.html',
@@ -30,14 +30,18 @@ angular
       .when('/register', {
         templateUrl: 'views/register.html',
         controller: 'AuthCtrl',
-        controllerAs: 'register',
-        resolve: {
-          user: function(Auth) {
-            return Auth.resolveUser();
-          }
-        }
+        controllerAs: 'register'
+      //   resolve: {
+      //     user: function(Auth) {
+      //       return Auth.resolveUser();
+      //     }
+      //   }
       })
       .otherwise({
         redirectTo: '/'
       });
+      // use the HTML5 History API
+      $locationProvider.html5Mode({
+      enabled:true,
+      requireBase: false});
   });
