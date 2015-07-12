@@ -1,21 +1,26 @@
-<div ng-repeat="post in posts">
-  <a ng-href="{{post.url}}">{{ post.title }}</a>
-  <p>{{post.functionality}}</p>
-  <a ng-click="deletePost(post.$id)">Delete</a>
-</div>
 
 <table class="responsive">
   <thead >
-    <th>1</th>
+    <th>Assignment</th>
     <th>Due Date</th>
-    <th>2</th>
-    <th>3</th>
+    <th>Functionality</th>
+    <th>Readability</th>
+    <th>Style</th>
+    <th>UI/UX</th>
+    <th>Deployment</th>
+    <th>Total</th>
   </thead>
   <tbody>
     <tr ng-repeat="post in posts">
       <td><a ng-href="{{post.url}}">{{ post.title }}</a></td>
       <td>{{ post.date }}
       <td>{{ post.functionality }}</td>
+      <td>{{ post.readability }}</td>
+      <td>{{ post.style }}</td>
+      <td>{{ post.uiux }}</td>
+      <td>{{ post.deployment }}</td>
+      <td>{{ post.total }}</td>
+
       <td><a ng-click="deletePost(post)">Delete</a></td>
   </tbody>
 </table>
@@ -25,6 +30,12 @@
 <p>Due date: <input type="date" ng-model="post.date"/></p>
 <p>Post to demo:  <input type="text" ng-model="post.url" /></p>
 <p>Functionality Score:  <input type="number" ng-model="post.functionality" min=1 max=50 maxlength="2"/></p>
+<p>Readability Score:  <input type="number" ng-model="post.readability" min=1 max=50 maxlength="2"/></p>
+<p>Style Score:  <input type="number" ng-model="post.style" min=1 max=50 maxlength="2"/></p>
+<p>UI/UX Score:  <input type="number" ng-model="post.uiux" min=1 max=50 maxlength="2"/></p>
+<p>Deployment Score:  <input type="number" ng-model="post.deployment" min=1 max=50 maxlength="2"/></p>
+<p>Total Score:  <input type="number" ng-model="post.total = post.functionality + post.readability + post.style + post.uiux + post.deployment" min=1 max=300 maxlength="2"/></p>
+
   <input type="submit" value="Add Post" />
 </form>
 Posts: {{ posts }}<br />
