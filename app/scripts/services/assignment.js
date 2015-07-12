@@ -9,7 +9,14 @@ angular
     var Post = {
       all:posts,
       create: function(post) {
-        return posts.$add(post);
+        console.log(post);
+        var p = {
+          date:post.date.toString(),
+          functionality: post.functionality,
+          url: post.url,
+          title: post.title
+        };
+        return posts.$add(p);
       },
       get: function(postId) {
         return $firebaseObject(ref.child('posts').child(postId));
