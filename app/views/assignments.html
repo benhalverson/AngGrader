@@ -13,7 +13,7 @@
   <tbody>
     <tr ng-repeat="post in posts">
       <td><a ng-href="{{post.url}}">{{ post.title }}</a></td>
-      <td>{{ post.date }}
+      <td>{{ post.date | date : MMddyy }}
       <td>{{ post.functionality }}</td>
       <td>{{ post.readability }}</td>
       <td>{{ post.style }}</td>
