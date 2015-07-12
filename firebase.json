@@ -1,0 +1,9 @@
+{
+  "firebase": "grader-app",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
