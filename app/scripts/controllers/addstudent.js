@@ -9,22 +9,19 @@
 */
 angular.module('angGraderApp')
 .controller('AddstudentCtrl', function ($scope, $rootScope) {
-  $rootScope.studentArr = [];
+  console.log('add student controller');
 
   $scope.addStudent = function(student){
     $rootScope.studentArr.push(student);
   }
 
-  // this.awesomeThings = [
-  //   'HTML5 Boilerplate',
-  //   'AngularJS',
-  //   'Karma'
-  // ];
+  $scope.student = [
+    {name: 'Ben', cohort: 'June 2014'},
+    {name: 'Christian', cohort: 'April 2015'}
+  ]
+  $scope.addStudent = function(student) {
+    console.log('adding a new student', student);
+    $scope.student.push(student);
 
-  // this.student = [
-  //   {'name': 'Ben',
-  //   'cohort' 'June 2014'},
-  //   {'name': 'Christian',
-  //   'cohort' 'April 2015'}
-  // ];
+  }
 });
