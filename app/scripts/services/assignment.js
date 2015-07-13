@@ -10,7 +10,6 @@ angular
     all:posts,
     create: function(post) {
       console.log(post);
-      var studentArr = [];
       var p = {
         date:post.date.toString(),
         functionality: post.functionality,
@@ -21,16 +20,18 @@ angular
         uiux: post.uiux,
         total: post.total,
         deployment: post.deployment,
-        students: studentArr
+        students: []
       };
       return posts.$add(p);
     },
     get: function(postId) {
+      console.log('get postId', postId);
       return $firebaseObject(ref.child('posts').child(postId));
     },
     delete: function(postId) {
-      console.log("services log", postId);
-      return posts.$remove(postId).then(function(ref){
+      console.log('delete postId', postId);
+      return posts.$remove(postId)
+      .then(function(ref){
         console.log(ref);
       }, function(err){
         console.log(err);

@@ -7,9 +7,9 @@ angular
 
     $scope.submitPost = function() {
       var thisPost = $scope.post;
-      var students = $rootScope.studentArr;
       thisPost.total = thisPost.functionality + thisPost.readability + thisPost.style + thisPost.uiux + thisPost.deployment;
-      Assignment.create(thisPost, students).then(function() {
+      Assignment.create(thisPost, $rootScope.studentArr)
+      .then(function() {
 
       });
     };
