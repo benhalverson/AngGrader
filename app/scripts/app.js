@@ -31,16 +31,16 @@ angular
         templateUrl: 'views/register.html',
         controller: 'AuthCtrl',
         controllerAs: 'register'
-      //   resolve: {
-      //     user: function(Auth) {
-      //       return Auth.resolveUser();
-      //     }
-      //   }
       })
       .when('/addstudent', {
         templateUrl: 'views/addstudent.html',
         controller: 'AddstudentCtrl',
         controllerAs: 'addstudent'
+      })
+      .when('/addgrade', {
+        templateUrl: 'views/addgrade.html',
+        controller: 'AddgradeCtrl',
+        controllerAs: 'addgrade'
       })
       .otherwise({
         redirectTo: '/'
