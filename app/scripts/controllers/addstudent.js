@@ -14,6 +14,7 @@ angular.module('angGraderApp')
 
   $scope.addStudent = function(student){
     var s = {
+      createdAt: Date(Date.now()),
       name: student.name,
       cohort: student.cohort,
       assignments: ['init']
