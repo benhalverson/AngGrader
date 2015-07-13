@@ -8,17 +8,24 @@
 * Controller of the angGraderApp
 */
 angular.module('angGraderApp')
-.controller('AddstudentCtrl', function ($scope, $rootScope, students) {
+.controller('AddstudentCtrl', function ($scope, $rootScope, Students) {
   console.log('$rootScope.studentArr', $rootScope.studentArr);
+
+  function init(){
+    console.log('this is init');
+  }
+  init();
+
   // $rootScope.studentArr = [];
   function roster(){
-    Students.all()
-    .then(function(res){
-      $rootScope.studentArr = res;
-      console.log('res', res);
-      console.log('$rootScope.studentArr', $rootScope.studentArr);
-    })
+    if(Students.all){
+      $rootScope.studentArr = Students.all;
+    } else {
+      $rootScope.studentArr = [];
+    }
+    console.log('$rootScope.studentArr', $rootScope.studentArr);
   }
+  roster();
 
   $scope.addStudent = function(student){
     var s = {
@@ -28,7 +35,7 @@ angular.module('angGraderApp')
       assignments: [
         {
           title: 'init',
-          date: '',
+          date: Date(Date.now()),
           functionality: 0,
           readability: 0,
           style: 0,
@@ -40,11 +47,11 @@ angular.module('angGraderApp')
     };
 
 
-    console.log('inside addStudent - before push');
+    console.log('inside addStudent - before push', s);
     $rootScope.studentArr.push(s);
     console.log('inside addStudent - after push');
     console.log('student', s);
-    students.add(s);
+    Students.add(s);
   };
 
   // $scope.student = [

@@ -10,15 +10,13 @@
  * Factory in the angGraderApp.
  */
 angular.module('angGraderApp')
-  .factory('students', function($firebaseArray, $firebaseObject, FIREBASE_URL, $rootScope) {
+  .factory('Students', function($firebaseArray, $firebaseObject, FIREBASE_URL, $rootScope) {
     var ref = new Firebase(FIREBASE_URL);
     var studentsRoute = $firebaseArray(ref.child('students'));
     // var studentsList = $rootScope.studentArr;
 
     var Students = {
-      all: function(studentId) {
-        return $firebaseObject(ref.child('students'));
-      },
+      all: studentsRoute,
       add: function(student) {
         console.log('student', student);
         console.log('studentsRoute', studentsRoute);
