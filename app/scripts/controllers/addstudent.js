@@ -8,12 +8,17 @@
  * Controller of the angGraderApp
  */
 angular.module('angGraderApp')
-  .controller('AddstudentCtrl', function () {
-    this.student = [
-      {'name': 'Ben',
-      'cohort' 'June 2014'},
-      {'name': 'Christian',
-      'cohort' 'April 2015'}
-
-        ];
+  .controller('AddstudentCtrl', function ($scope, $rootScope) {
+    console.log('add student controller');
+    $scope.student = [
+    {name: 'Ben',
+    cohort: 'June 2014'},
+    {name: 'Christian',
+    cohort: 'April 2015'}
+    ]
+    $scope.addStudent = function(student) {
+      console.log('adding a new student', student);
+      $scope.student.push(student);
+      
+    }
   });
