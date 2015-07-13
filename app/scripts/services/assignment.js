@@ -10,7 +10,7 @@ angular
     all:posts,
     create: function(post) {
       console.log(post);
-      var studentArr = []
+      var studentArr = [];
       var p = {
         date:post.date.toString(),
         functionality: post.functionality,

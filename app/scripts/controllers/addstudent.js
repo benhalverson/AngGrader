@@ -8,10 +8,16 @@
  * Controller of the angGraderApp
  */
 angular.module('angGraderApp')
-  .controller('AddstudentCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('AddstudentCtrl', function ($scope, $rootScope) {
+    $rootScope.studentArr = [];
+
+    $scope.addStudent = function(student){
+      $rootScope.studentArr.push(student);
+    }
+
+    // this.awesomeThings = [
+    //   'HTML5 Boilerplate',
+    //   'AngularJS',
+    //   'Karma'
+    // ];
   });
