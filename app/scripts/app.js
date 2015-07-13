@@ -37,6 +37,11 @@ angular
       //     }
       //   }
       })
+      .when('/addstudent', {
+        templateUrl: 'views/addstudent.html',
+        controller: 'AddstudentCtrl',
+        controllerAs: 'addstudent'
+      })
       .otherwise({
         redirectTo: '/'
       });

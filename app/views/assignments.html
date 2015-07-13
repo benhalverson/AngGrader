@@ -1,4 +1,5 @@
 
+
 <table class="responsive">
   <thead >
     <th>Assignment</th>
@@ -25,8 +26,8 @@
   </tbody>
 </table>
 
-<form ng-submit="submitPost()">
-<p>Name of Assignment:  <input type="text" ng-model="post.title" /></p>
+<form ng-submit="submitPost()" class="large-10 columns">
+<p class="large-offset- columns">Name of Assignment:  <input type="text" ng-model="post.title" /></p>
 <p>Due date: <input type="date" ng-model="post.date"/></p>
 <p>Post to demo:  <input type="text" ng-model="post.url" /></p>
 <p>Functionality Score:  <input type="number" ng-model="post.functionality" min=1 max=50 maxlength="2"/></p>
@@ -34,10 +35,7 @@
 <p>Style Score:  <input type="number" ng-model="post.style" min=1 max=50 maxlength="2"/></p>
 <p>UI/UX Score:  <input type="number" ng-model="post.uiux" min=1 max=50 maxlength="2"/></p>
 <p>Deployment Score:  <input type="number" ng-model="post.deployment" min=1 max=50 maxlength="2"/></p>
-<p>Total Score:  <input type="number" ng-model="post.total = post.functionality + post.readability + post.style + post.uiux + post.deployment" min=1 max=300 maxlength="2"/></p>
+<p>Total Score:  {{post.total}} </p>
 
   <input type="submit" value="Add Post" />
 </form>
-Posts: {{ posts }}<br />
-Post: {{ post }}<br />
-Date: {{ post.date | date: 'medium'}}<br />

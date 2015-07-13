@@ -1,0 +1,26 @@
+<form ng-submit="addStudent(student)">
+  <div class="row">
+    <div class="large-4 columns">
+      <label>Name
+        <input type="text" placeholder="name" ng-model="student.name" />
+      </label>
+    </div>
+
+    <div class="row">
+      <div class="large-4 columns">
+        <label>Cohort
+          <input type="text" placeholder="Cohort" ng-model="student.cohort" />
+        </label>
+      </div>
+
+      <div class="row">
+        <div class="large-4 columns"><br>
+          <input type="submit" class="button small"value="Add Student" />
+        </div>
+      </div>
+
+
+    </form>
+    <div>Name of student: {{ student.name }}</div>
+
+    <div> Student object: {{ student }}</div>
