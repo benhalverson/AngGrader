@@ -34,21 +34,21 @@
         <th>Total</th>
       </thead>
       <tbody ng-repeat="student in studentArr">
-              <tr ng-repeat="val in student.assignments">
-                <td>{{ student.name }}</td>
-                <td>{{ student.cohort }}</td>
-                <td>{{ val.title }}</td>
-                <td>{{ val.date }}</td>
-                <td>{{ val.functionality }}</td>
-                <td>{{ val.readability }}</td>
-                <td>{{ val.style }}</td>
-                <td>{{ val.uiux }}</td>
-                <td>{{ val.deployment }}</td>
-                <td>{{ val.total }}</td>
-              </tr>
-        </tbody>
-      </table>
+        <tr ng-repeat="val in student.assignments">
+          <td>{{ student.name }}</td>
+          <td>{{ student.cohort }}</td>
+          <td>{{ val.title }}</td>
+          <td>{{ val.date }}</td>
+          <td>{{ val.functionality }}</td>
+          <td>{{ val.readability }}</td>
+          <td>{{ val.style }}</td>
+          <td>{{ val.uiux }}</td>
+          <td>{{ val.deployment }}</td>
+          <td>{{ val.total }}</td>
+        </tr>
+      </tbody>
+    </table>
 
-      <div>Name of student: {{ student.name }}</div>
+    <div>Name of student: {{ student.name }}</div>
 
-      <div> Student object: {{ student }}</div>
+    <div> Student object: {{ student }}</div>

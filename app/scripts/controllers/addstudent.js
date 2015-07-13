@@ -47,9 +47,9 @@ angular.module('angGraderApp')
     };
 
 
-    console.log('inside addStudent - before push', s);
-    $rootScope.studentArr.push(s);
-    console.log('inside addStudent - after push');
+    // console.log('inside addStudent - before push', s);
+    // $rootScope.studentArr.push(s);
+    // console.log('inside addStudent - after push');
     console.log('student', s);
     Students.add(s);
   };
