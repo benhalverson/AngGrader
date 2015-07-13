@@ -9,15 +9,22 @@
 */
 angular.module('angGraderApp')
 .controller('AddstudentCtrl', function ($scope, $rootScope, students) {
-  console.log('add student controller');
-  $rootScope.studentArr = [];
+  console.log('$rootScope.studentArr', $rootScope.studentArr);
+  // $rootScope.studentArr = [];
 
   $scope.addStudent = function(student){
+    var s = {
+      name: student.name,
+      cohort: student.cohort,
+      assignments: ['init']
+    };
+
+
     console.log('inside addStudent - before push');
-    $rootScope.studentArr.push(student);
+    $rootScope.studentArr.push(s);
     console.log('inside addStudent - after push');
-    console.log('student', student);
-    students.add(student);
+    console.log('student', s);
+    students.add(s);
   };
 
   // $scope.student = [

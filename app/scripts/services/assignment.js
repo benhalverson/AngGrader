@@ -1,13 +1,14 @@
 'use strict';
 angular
 .module('angGraderApp')
-.factory('Assignment', function($firebaseArray, $firebaseObject, FIREBASE_URL) {
+.factory('Assignment', function($firebaseArray, $firebaseObject, FIREBASE_URL, $rootScope) {
   var ref = new Firebase(FIREBASE_URL);
   var posts = $firebaseArray(ref.child('posts'));
 
+  // $rootScope.studentArr = ['test'];
 
   var Post = {
-    all:posts,
+    all: posts,
     create: function(post) {
       console.log(post);
       var p = {
@@ -20,7 +21,7 @@ angular
         uiux: post.uiux,
         total: post.total,
         deployment: post.deployment,
-        students: []
+        students: $rootScope.studentArr
       };
       return posts.$add(p);
     },
