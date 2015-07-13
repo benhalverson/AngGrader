@@ -10,7 +10,8 @@ angular
   var Post = {
     all: posts,
     create: function(post) {
-      console.log(post);
+      console.log('create post', post);
+      
       var p = {
         date:post.date.toString(),
         functionality: post.functionality,

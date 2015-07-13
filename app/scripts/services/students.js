@@ -16,24 +16,25 @@ angular.module('angGraderApp')
     // var studentsList = $rootScope.studentArr;
 
     var Students = {
-      // all:students,
+      all: function(studentId) {
+        return $firebaseObject(ref.child('students');
+      },
       add: function(student) {
         console.log('student', student);
         console.log('studentsRoute', studentsRoute);
         return studentsRoute.$add(student);
+      },
+      get: function(studentId) {
+        return $firebaseObject(ref.child('students').child(studentId));
+      },
+      delete: function(studentId) {
+        return studentsRoute.$remove(studentId)
+        .then(function(ref){
+          console.log('delete ref',ref);
+        }, function(err){
+          console.log(err);
+        });
       }
-      // ,
-      // get: function(studentId) {
-      //   return $firebaseObject(ref.child('students').child(studentId));
-      // },
-      // delete: function(studentId) {
-      //   return studentsRoute.$remove(studentId)
-      //   .then(function(ref){
-      //     console.log('delete ref',ref);
-      //   }, function(err){
-      //     console.log(err);
-      //   });
-      // }
     };
 
     return Students;

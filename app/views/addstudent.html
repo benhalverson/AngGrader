@@ -18,9 +18,35 @@
           <input type="submit" class="button small"value="Add Student" />
         </div>
       </div>
-
-
     </form>
-    <div>Name of student: {{ student.name }}</div>
 
-    <div> Student object: {{ student }}</div>
+    <table class="responsive">
+      <thead >
+        <th>Student Name</th>
+        <th>Assignment</th>
+        <th>Due Date</th>
+        <th>Functionality</th>
+        <th>Readability</th>
+        <th>Style</th>
+        <th>UI/UX</th>
+        <th>Deployment</th>
+        <th>Total</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="post in posts">
+          <td><a ng-href="{{post.url}}">{{ post.title }}</a></td>
+          <td>{{ post.date }}
+            <td>{{ post.functionality }}</td>
+            <td>{{ post.readability }}</td>
+            <td>{{ post.style }}</td>
+            <td>{{ post.uiux }}</td>
+            <td>{{ post.deployment }}</td>
+            <td>{{ post.total }}</td>
+
+            <td><a ng-click="deletePost(post)">Delete</a></td>
+          </tbody>
+        </table>
+
+        <div>Name of student: {{ student.name }}</div>
+
+        <div> Student object: {{ student }}</div>

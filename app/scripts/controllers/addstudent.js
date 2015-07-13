@@ -11,13 +11,32 @@ angular.module('angGraderApp')
 .controller('AddstudentCtrl', function ($scope, $rootScope, students) {
   console.log('$rootScope.studentArr', $rootScope.studentArr);
   // $rootScope.studentArr = [];
+  function roster(){
+    Students.all()
+    .then(function(res){
+      $rootScope.studentArr = res;
+      console.log('res', res);
+      console.log('$rootScope.studentArr', $rootScope.studentArr);
+    })
+  }
 
   $scope.addStudent = function(student){
     var s = {
       createdAt: Date(Date.now()),
       name: student.name,
       cohort: student.cohort,
-      assignments: ['init']
+      assignments: [
+        {
+          title: 'init',
+          date: '',
+          functionality: 0,
+          readability: 0,
+          style: 0,
+          uiux: 0,
+          deployment: 0,
+          total: 0
+        }
+      ]
     };
 
 
