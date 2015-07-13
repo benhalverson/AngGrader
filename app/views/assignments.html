@@ -30,11 +30,11 @@
 <p class="large-offset- columns">Name of Assignment:  <input type="text" ng-model="post.title" /></p>
 <p>Due date: <input type="date" ng-model="post.date"/></p>
 <p>Post to demo:  <input type="text" ng-model="post.url" /></p>
-<p>Functionality Score:  <input type="number" ng-model="post.functionality" min=1 max=50 maxlength="2"/></p>
-<p>Readability Score:  <input type="number" ng-model="post.readability" min=1 max=50 maxlength="2"/></p>
-<p>Style Score:  <input type="number" ng-model="post.style" min=1 max=50 maxlength="2"/></p>
-<p>UI/UX Score:  <input type="number" ng-model="post.uiux" min=1 max=50 maxlength="2"/></p>
-<p>Deployment Score:  <input type="number" ng-model="post.deployment" min=1 max=50 maxlength="2"/></p>
+<p>Functionality Score:  <input type="number" ng-model="post.functionality" maxlength="2"/></p>
+<p>Readability Score:  <input type="number" ng-model="post.readability" maxlength="2"/></p>
+<p>Style Score:  <input type="number" ng-model="post.style"  maxlength="2"/></p>
+<p>UI/UX Score:  <input type="number" ng-model="post.uiux"  maxlength="2"/></p>
+<p>Deployment Score:  <input type="number" ng-model="post.deployment" maxlength="2"/></p>
 <p>Total Score:  {{post.total}} </p>
 
   <input type="submit" value="Add Post" />
