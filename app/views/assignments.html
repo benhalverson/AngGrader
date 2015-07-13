@@ -37,5 +37,43 @@
 <p>Deployment Score:  <input type="number" ng-model="post.deployment" maxlength="2"/></p>
 <p>Total Score:  {{post.total}} </p>
 
-  <input type="submit" value="Add Post" />
+  <input type="submit" class="button small" value="Add Post" />
 </form>
+
+
+
+<form ng-submit="submitPost()">
+  <div class="row">
+    <div class="large-8 large-offset-4 large-centered columns">
+      <label>Name of Assignment
+        <input type="text" placeholder="todo list" />
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 large-offset-4 large-centered columns">
+      <label>Due Date
+        <input type="date" ng-model="post.date"/>
+      </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-8 large-offset-4 large-centered columns">
+      <label>Functionality
+        <input type="number" placeholder="Does it work?" min="0" ng-model="post.functionality" />
+      </label>
+    </div>
+    <div class="large-8 large-offset-4 large-centered columns">
+      <label>Readability
+        <input type="number" placeholder="Does it work?" min="0" ng-model="post.readability" />
+      </label>
+    </div>
+    <div class="large-8 large-offset-4 large-centered columns">
+      <label>Style
+        <input type="number" placeholder="Does it work?" min="0" ng-model="post.style" />
+      </label>
+    </div>
+
+    <input type="submit" class="button small" value="Add Post" />
+  </form>
