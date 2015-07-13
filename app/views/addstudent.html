@@ -33,13 +33,10 @@
         <th>Deployment</th>
         <th>Total</th>
       </thead>
-      <tbody>
-        <tr ng-repeat="student in studentArr">
-          <td>{{ student.name }}</td>
-          <td>{{ student.cohort }}</td>
-          <td>
-            <div>
+      <tbody ng-repeat="student in studentArr">
               <tr ng-repeat="val in student.assignments">
+                <td>{{ student.name }}</td>
+                <td>{{ student.cohort }}</td>
                 <td>{{ val.title }}</td>
                 <td>{{ val.date }}</td>
                 <td>{{ val.functionality }}</td>
@@ -49,8 +46,6 @@
                 <td>{{ val.deployment }}</td>
                 <td>{{ val.total }}</td>
               </tr>
-            </div>
-          </td>
         </tbody>
       </table>
 

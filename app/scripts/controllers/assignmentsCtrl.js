@@ -7,7 +7,7 @@ angular
     {name: 'Ben', cohort: 'June 2014', assignments: [
       {
         title: 'init',
-        date: '',
+        date: Date(Date.now()),
         functionality: 0,
         readability: 0,
         style: 0,
@@ -20,7 +20,7 @@ angular
   {name: 'Christian', cohort: 'April 2015', assignments: [
     {
       title: 'init',
-      date: '',
+      date: Date(Date.now()),
       functionality: 0,
       readability: 0,
       style: 0,
