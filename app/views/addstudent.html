@@ -23,6 +23,7 @@
     <table class="responsive">
       <thead >
         <th>Student Name</th>
+        <th>Cohort</th>
         <th>Assignment</th>
         <th>Due Date</th>
         <th>Functionality</th>
@@ -33,20 +34,26 @@
         <th>Total</th>
       </thead>
       <tbody>
-        <tr ng-repeat="post in posts">
-          <td><a ng-href="{{post.url}}">{{ post.title }}</a></td>
-          <td>{{ post.date }}
-            <td>{{ post.functionality }}</td>
-            <td>{{ post.readability }}</td>
-            <td>{{ post.style }}</td>
-            <td>{{ post.uiux }}</td>
-            <td>{{ post.deployment }}</td>
-            <td>{{ post.total }}</td>
+        <tr ng-repeat="student in studentArr">
+          <td>{{ student.name }}</td>
+          <td>{{ student.cohort }}</td>
+          <td>
+            <div>
+              <tr ng-repeat="val in student.assignments">
+                <td>{{ val.title }}</td>
+                <td>{{ val.date }}</td>
+                <td>{{ val.functionality }}</td>
+                <td>{{ val.readability }}</td>
+                <td>{{ val.style }}</td>
+                <td>{{ val.uiux }}</td>
+                <td>{{ val.deployment }}</td>
+                <td>{{ val.total }}</td>
+              </tr>
+            </div>
+          </td>
+        </tbody>
+      </table>
 
-            <td><a ng-click="deletePost(post)">Delete</a></td>
-          </tbody>
-        </table>
+      <div>Name of student: {{ student.name }}</div>
 
-        <div>Name of student: {{ student.name }}</div>
-
-        <div> Student object: {{ student }}</div>
+      <div> Student object: {{ student }}</div>

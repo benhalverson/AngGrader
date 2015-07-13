@@ -17,7 +17,7 @@ angular.module('angGraderApp')
 
     var Students = {
       all: function(studentId) {
-        return $firebaseObject(ref.child('students');
+        return $firebaseObject(ref.child('students'));
       },
       add: function(student) {
         console.log('student', student);
