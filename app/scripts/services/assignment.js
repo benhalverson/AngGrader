@@ -14,7 +14,12 @@ angular
           date:post.date.toString(),
           functionality: post.functionality,
           url: post.url,
-          title: post.title
+          title: post.title,
+          readability: post.readability,
+          style: post.style,
+          uiux: post.uiux,
+          total: post.total,
+          deployment: post.deployment
         };
         return posts.$add(p);
       },

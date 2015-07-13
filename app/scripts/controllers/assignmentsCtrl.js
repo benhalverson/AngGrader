@@ -5,7 +5,9 @@ angular
     $scope.posts = Assignment.all;
 
     $scope.submitPost = function() {
-      Assignment.create($scope.post).then(function() {
+      var thisPost = $scope.post;
+      thisPost.total = thisPost.functionality + thisPost.readability + thisPost.style + thisPost.uiux + thisPost.deployment;
+      Assignment.create(thisPost).then(function() {
 
       });
     };
