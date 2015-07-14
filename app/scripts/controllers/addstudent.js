@@ -12,38 +12,30 @@ angular.module('angGraderApp')
   console.log('$rootScope.studentArr', $rootScope.studentArr);
 
   function init(){
-    console.log('this is init');
-  }
-  init();
-
-  // $rootScope.studentArr = [];
-  function roster(){
     if(Students.all){
-      $rootScope.studentArr = Students.all;
+        $rootScope.studentArr = Students.all;
     } else {
       $rootScope.studentArr = [];
     }
     console.log('$rootScope.studentArr', $rootScope.studentArr);
   }
-  roster();
+  init();
 
   $scope.addStudent = function(student){
     var s = {
       createdAt: Date(Date.now()),
       name: student.name,
       cohort: student.cohort,
-      assignments: [
-        {
-          title: 'init',
-          date: Date(Date.now()),
-          functionality: 0,
-          readability: 0,
-          style: 0,
-          uiux: 0,
-          deployment: 0,
-          total: 0
-        }
-      ]
+      assignments: [{
+        title: 'init',
+        date: '',
+        functionality: 0,
+        readability: 0,
+        style: 0,
+        uiux: 0,
+        deployment: 0,
+        total: 0
+      }]
     };
 
 
