@@ -11,16 +11,6 @@ angular.module('angGraderApp')
 .controller('AddstudentCtrl', function ($scope, $rootScope, Students) {
   console.log('$rootScope.studentArr', $rootScope.studentArr);
 
-  function init(){
-    if(Students.all){
-        $rootScope.studentArr = Students.all;
-    } else {
-      $rootScope.studentArr = [];
-    }
-    console.log('$rootScope.studentArr', $rootScope.studentArr);
-  }
-  init();
-
   $scope.addStudent = function(student){
     var s = {
       createdAt: Date(Date.now()),
