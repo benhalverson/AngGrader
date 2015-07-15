@@ -25,7 +25,7 @@
       <td><a ng-click="deletePost(post)"><i class="fa fa-trash-o"></i></a></td>
   </tbody>
 </table>
-
+<!--
 <form ng-submit="submitPost()" class="large-10 columns">
 <p class="large-offset- columns">Name of Assignment:  <input type="text" ng-model="post.title" /></p>
 <p>Due date: <input type="date" ng-model="post.date"/></p>
@@ -38,7 +38,7 @@
 <p>Total Score:  {{post.total}} </p>
 
   <input type="submit" class="button small" value="Add Post" />
-</form>
+</form> -->
 
 
 
@@ -46,7 +46,7 @@
   <div class="row">
     <div class="large-8 large-offset-4 large-centered columns">
       <label>Name of Assignment
-        <input type="text" placeholder="todo list" />
+        <input type="text" placeholder="todo list" ng-model="post.title" />
       </label>
     </div>
   </div>
@@ -66,14 +66,31 @@
     </div>
     <div class="large-8 large-offset-4 large-centered columns">
       <label>Readability
-        <input type="number" placeholder="Does it work?" min="0" ng-model="post.readability" />
+        <input type="number" min="0" ng-model="post.readability" />
       </label>
     </div>
     <div class="large-8 large-offset-4 large-centered columns">
       <label>Style
-        <input type="number" placeholder="Does it work?" min="0" ng-model="post.style" />
+        <input type="number" min="0" ng-model="post.style" />
       </label>
     </div>
-
+    </div>
+    <div class="large-8 large-offset-4 large-centered columns">
+      <label>UI/UX
+        <input type="number" min="0" ng-model="post.uiux" />
+      </label>
+    </div>
+    </div>
+    <div class="large-8 large-offset-4 large-centered columns">
+      <label>Deployment
+        <input type="number" min="0" ng-model="post.deployment" />
+      </label>
+    </div>
+    <div class="large-8 large-offset-4 large-centered columns">
+      <label>Post to demo
+        <input type="text" ng-model="post.url" />
+      </label>
+    </div>
+    <p>Total Score:  {{post.total}} </p>
     <input type="submit" class="button small" value="Add Post" />
   </form>
