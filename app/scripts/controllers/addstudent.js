@@ -9,7 +9,7 @@
 */
 angular.module('angGraderApp')
 .controller('AddstudentCtrl', function ($scope, $rootScope, Students) {
-  console.log('$rootScope.studentArr', $rootScope.studentArr);
+  console.log('inside AddstudentCtrl - $rootScope.studentArr', $rootScope.studentArr);
 
   $scope.addStudent = function(student){
     var s = {

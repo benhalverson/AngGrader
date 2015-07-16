@@ -8,10 +8,10 @@
  * Controller of the angGraderApp
  */
 angular.module('angGraderApp')
-  .controller('AddgradeCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('AddgradeCtrl', function ($rootScope, $scope, Assignment) {
+    console.log('inside the AddgradeCtrl');
+
+    $scope.posts = Assignment.all;
+    console.log('$scope.posts', $scope.posts[0]);
+
   });
