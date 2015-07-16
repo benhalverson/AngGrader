@@ -1,11 +1,11 @@
-<p>This is the addgrade view.</p>
+
 
 <form ng-submit="submitPost()" class="large-10 columns">
-  <select ng-model="whichPost">
-    <option ng-options="post in posts">{{ post.title }}</option>
-  </select>
+  <select ng-model="whichPost" ng-options="post.title for post in posts"></select>
+    <!-- <option ng-options="post in posts">{{ post.title }}</option>
+  </select> -->
 
-  {{ posts }}
+  <!-- {{ posts }} -->
 
   <p class="large-offset- columns">Name of Assignment:  <input type="text" ng-model="post.title" /></p>
   <p>Due date: <input type="date" ng-model="post.date"/></p>
