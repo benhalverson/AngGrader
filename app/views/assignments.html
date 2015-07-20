@@ -14,7 +14,7 @@
   <tbody>
     <tr ng-repeat="post in posts">
       <td><a ng-href="{{post.url}}">{{ post.title }}</a></td>
-      <td>{{ post.date }}
+      <td>{{ post.date | date : MMddyy }}
       <td>{{ post.functionality }}</td>
       <td>{{ post.readability }}</td>
       <td>{{ post.style }}</td>
@@ -22,20 +22,75 @@
       <td>{{ post.deployment }}</td>
       <td>{{ post.total }}</td>
 
-      <td><a ng-click="deletePost(post)">Delete</a></td>
+      <td><a ng-click="deletePost(post)"><i class="fa fa-trash-o"></i></a></td>
   </tbody>
 </table>
-
+<!--
 <form ng-submit="submitPost()" class="large-10 columns">
 <p class="large-offset- columns">Name of Assignment:  <input type="text" ng-model="post.title" /></p>
 <p>Due date: <input type="date" ng-model="post.date"/></p>
 <p>Post to demo:  <input type="text" ng-model="post.url" /></p>
-<p>Functionality Score:  <input type="number" ng-model="post.functionality" min=1 max=50 maxlength="2"/></p>
-<p>Readability Score:  <input type="number" ng-model="post.readability" min=1 max=50 maxlength="2"/></p>
-<p>Style Score:  <input type="number" ng-model="post.style" min=1 max=50 maxlength="2"/></p>
-<p>UI/UX Score:  <input type="number" ng-model="post.uiux" min=1 max=50 maxlength="2"/></p>
-<p>Deployment Score:  <input type="number" ng-model="post.deployment" min=1 max=50 maxlength="2"/></p>
+<p>Functionality Score:  <input type="number" ng-model="post.functionality" maxlength="2"/></p>
+<p>Readability Score:  <input type="number" ng-model="post.readability" maxlength="2"/></p>
+<p>Style Score:  <input type="number" ng-model="post.style"  maxlength="2"/></p>
+<p>UI/UX Score:  <input type="number" ng-model="post.uiux"  maxlength="2"/></p>
+<p>Deployment Score:  <input type="number" ng-model="post.deployment" maxlength="2"/></p>
 <p>Total Score:  {{post.total}} </p>
 
-  <input type="submit" value="Add Post" />
-</form>
+  <input type="submit" class="button small" value="Add Post" />
+</form> -->
+
+
+
+<form ng-submit="submitPost()">
+  <div class="row">
+    <div class="large-8 large-offset-4 large-centered columns">
+      <label>Name of Assignment
+        <input type="text" placeholder="todo list" ng-model="post.title" />
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 large-offset-4 large-centered columns">
+      <label>Due Date
+        <input type="date" ng-model="post.date"/>
+      </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-8 large-offset-4 large-centered columns">
+      <label>Functionality
+        <input type="number" placeholder="Does it work?" min="0" ng-model="post.functionality" />
+      </label>
+    </div>
+    <div class="large-8 large-offset-4 large-centered columns">
+      <label>Readability
+        <input type="number" min="0" ng-model="post.readability" />
+      </label>
+    </div>
+    <div class="large-8 large-offset-4 large-centered columns">
+      <label>Style
+        <input type="number" min="0" ng-model="post.style" />
+      </label>
+    </div>
+    </div>
+    <div class="large-8 large-offset-4 large-centered columns">
+      <label>UI/UX
+        <input type="number" min="0" ng-model="post.uiux" />
+      </label>
+    </div>
+    </div>
+    <div class="large-8 large-offset-4 large-centered columns">
+      <label>Deployment
+        <input type="number" min="0" ng-model="post.deployment" />
+      </label>
+    </div>
+    <div class="large-8 large-offset-4 large-centered columns">
+      <label>Post to demo
+        <input type="text" ng-model="post.url" />
+      </label>
+    </div>
+    <p>Total Score:  {{post.total}} </p>
+    <input type="submit" class="button small" value="Add Post" />
+  </form>
