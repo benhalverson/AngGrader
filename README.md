@@ -10,3 +10,10 @@ Run `grunt` for building and `grunt serve` for preview.
 ## Testing
 
 Running `grunt test` will run the unit tests with karma.
+
+## Deployment
+firebase Deploy
+firebase open
+
+* if you don't have the firebase command run
+* npm install -g firebase-tools
