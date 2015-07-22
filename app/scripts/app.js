@@ -42,6 +42,11 @@ angular
         controller: 'AddgradeCtrl',
         controllerAs: 'addgrade'
       })
+      .when('/profile', {
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl',
+        controllerAs: 'profile'
+      })
       .otherwise({
         redirectTo: '/'
       });
