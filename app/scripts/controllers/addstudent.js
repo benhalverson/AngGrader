@@ -9,7 +9,22 @@
 */
 angular.module('angGraderApp')
 .controller('AddstudentCtrl', function ($scope, $rootScope, Students) {
+
+  console.log('$rootScope.studentArr BEFORE', $rootScope.studentArr);
+
+  function init(){
+    console.log('this is init');
+    if(Students.all){
+        $rootScope.studentArr = Students.all;
+    } else {
+      $rootScope.studentArr = [];
+    }
+    console.log('$rootScope.studentArr AFTER init', $rootScope.studentArr);
+  }
+  init();
+
   console.log('inside AddstudentCtrl - $rootScope.studentArr', $rootScope.studentArr);
+
 
   $scope.addStudent = function(student){
     var s = {
@@ -28,21 +43,7 @@ angular.module('angGraderApp')
       }]
     };
 
-
-    // console.log('inside addStudent - before push', s);
-    // $rootScope.studentArr.push(s);
-    // console.log('inside addStudent - after push');
     console.log('student', s);
     Students.add(s);
   };
-
-  // $scope.student = [
-  //   {name: 'Ben', cohort: 'June 2014'},
-  //   {name: 'Christian', cohort: 'April 2015'}
-  // ];
-
-  // $scope.addStudent = function(student) {
-  //   console.log('adding a new student', student);
-  //   $scope.student.push(student);
-  // };
 });

@@ -8,10 +8,6 @@
  * Controller of the angGraderApp
  */
 angular.module('angGraderApp')
-  .controller('ProfileCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('ProfileCtrl', function ($scope, $rootScope, Assignment, Students) {
+console.log('inside ProfileCtrl');
   });
