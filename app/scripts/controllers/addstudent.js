@@ -9,9 +9,6 @@
 */
 angular.module('angGraderApp')
 .controller('AddstudentCtrl', function ($scope, $rootScope, Students) {
-
-  console.log('$rootScope.studentArr BEFORE', $rootScope.studentArr);
-
   function init(){
     console.log('this is init');
     if(Students.all){
@@ -19,7 +16,6 @@ angular.module('angGraderApp')
     } else {
       $rootScope.studentArr = [];
     }
-    console.log('$rootScope.studentArr AFTER init', $rootScope.studentArr);
   }
   init();
 
@@ -45,5 +41,10 @@ angular.module('angGraderApp')
 
     console.log('student', s);
     Students.add(s);
+  };
+
+  $scope.deleteStudent = function(studentId){
+    console.log('student removed');
+    Students.delete(studentId);
   };
 });

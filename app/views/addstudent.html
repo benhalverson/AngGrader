@@ -24,6 +24,8 @@
       <thead >
         <th>Student Name</th>
         <th>Cohort</th>
+        <th>Edit</th>
+        <th>Remove</th>
         <!-- <th>Assignment</th>
         <th>Due Date</th>
         <th>Functionality</th>
@@ -37,6 +39,8 @@
         <!-- <tr ng-repeat="val in student.assignments"> -->
           <td>{{ student.name }}</td>
           <td>{{ student.cohort }}</td>
+          <td>Edit</td>
+          <td><a ng-click="deleteStudent(student)"><i class="fa fa-trash-o"></i></a></td>
           <!-- <td>{{ val.title }}</td>
           <td>{{ val.date }}</td>
           <td>{{ val.functionality }}</td>
