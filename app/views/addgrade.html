@@ -1,21 +1,61 @@
+<div class='row'>
+  <div class="col-xs-2 col-xs-offset-2">
+    <label>Choose Assignment to Grade</label>
+    <select ng-model="grading.assignment" ng-options="post.title for post in posts"></select>
+    <label>Choose Student to Grade</label>
+    <select ng-model="grading.student" ng-options="students.name for students in grading.assignment.students"></select>
+    <button ng-click="gradeThis(grading)" class="btn btn-success">Start Grading</button>
+    <!-- <p>{{grading.assignment}}</p>
+    <p>{{grading.student}}</p> -->
+  </div>
+</div>
+<div class='row'>
+  <div class="col-xs-2 col-xs-offset-2">
+    <table class="table table-striped">
+      <thead >
+        <th>Student Name</th>
+        <th>Cohort</th>
+        <th>Assignment</th>
+        <th>Due Date</th>
+        <th>Functionality</th>
+        <th>Readability</th>
+        <th>Style</th>
+        <th>UI/UX</th>
+        <th>Deployment</th>
+        <th>Total</th>
+      </thead>  
+      <tbody ng-repeat="student in studentArr">
+        <tr ng-repeat="val in student.assignments">
+          <td>{{ student.name }}</td>
+          <td>{{ student.cohort }}</td>
+          <td>{{ val.title }}</td>
+          <td>{{ val.date }}</td>
+          <td>{{ val.functionality }}</td>
+          <td>{{ val.readability }}</td>
+          <td>{{ val.style }}</td>
+          <td>{{ val.uiux }}</td>
+          <td>{{ val.deployment }}</td>
+          <td>{{ val.total }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- <form class="large-10 columns">
+<p ng-submit="submitPost()" class="large-10 columns"></p> -->
+<!-- <select ng-model="whichPost" ng-options="post.title for post in posts"></select> -->
 
 
-<form ng-submit="submitPost()" class="large-10 columns">
-  <select ng-model="whichPost" ng-options="post.title for post in posts"></select>
-    <!-- <option ng-options="post in posts">{{ post.title }}</option>
-  </select> -->
+<!-- <p class="large-offset- columns">Name of Assignment:  <input type="text" ng-model="post.title" /></p>
+<p>Due date: <input type="date" ng-model="post.date"/></p>
+<p>Post to demo:  <input type="text" ng-model="post.url" /></p>
+<p>Functionality Score:  <input type="number" ng-model="post.functionality" min=1 max=50 maxlength="2"/></p>
+<p>Readability Score:  <input type="number" ng-model="post.readability" min=1 max=50 maxlength="2"/></p>
+<p>Style Score:  <input type="number" ng-model="post.style" min=1 max=50 maxlength="2"/></p>
+<p>UI/UX Score:  <input type="number" ng-model="post.uiux" min=1 max=50 maxlength="2"/></p>
+<p>Deployment Score:  <input type="number" ng-model="post.deployment" min=1 max=50 maxlength="2"/></p>
+<p>Total Score:  {{post.total}} </p>
 
-  <!-- {{ posts }} -->
-
-  <p class="large-offset- columns">Name of Assignment:  <input type="text" ng-model="post.title" /></p>
-  <p>Due date: <input type="date" ng-model="post.date"/></p>
-  <p>Post to demo:  <input type="text" ng-model="post.url" /></p>
-  <p>Functionality Score:  <input type="number" ng-model="post.functionality" min=1 max=50 maxlength="2"/></p>
-  <p>Readability Score:  <input type="number" ng-model="post.readability" min=1 max=50 maxlength="2"/></p>
-  <p>Style Score:  <input type="number" ng-model="post.style" min=1 max=50 maxlength="2"/></p>
-  <p>UI/UX Score:  <input type="number" ng-model="post.uiux" min=1 max=50 maxlength="2"/></p>
-  <p>Deployment Score:  <input type="number" ng-model="post.deployment" min=1 max=50 maxlength="2"/></p>
-  <p>Total Score:  {{post.total}} </p>
-
-  <input type="submit" value="Add Post" />
-</form>
+<input type="submit" value="Add Post" />
+</form> -->
