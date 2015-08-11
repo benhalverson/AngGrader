@@ -14,6 +14,7 @@ Running `grunt test` will run the unit tests with karma.
 ## Deployment
 firebase Deploy
 firebase open
+https://grader-app.firebaseapp.com/
 
 * if you don't have the firebase command run
 * npm install -g firebase-tools
